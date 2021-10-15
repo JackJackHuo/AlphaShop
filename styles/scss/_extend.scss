@@ -1,0 +1,20 @@
+@import './color';
+
+%standard-boxshadow {
+  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+}
+
+%margin-center{
+  width: 80%;
+  margin: 0 auto;
+}
+
+%input-style{
+  border: 1px solid var(--input-bder);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0.5rem;
+  &:hover , &:active{
+    border-color: $dark-gray;
+  }
+}
