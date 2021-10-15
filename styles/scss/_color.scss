@@ -18,8 +18,10 @@ $light-gray: #a7aaaf;
   --input-bder:#4A4A4A;
   --input-color:#999999;
   --input-label:#808080;
+  --selected-step:#2A2A2A;
+  --unselected-step:#AFB1BD;
   --logo-url: url("../../images/Logo@2x.png");
-  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
   }
 
   [data-theme="dark"]{
@@ -34,8 +36,10 @@ $light-gray: #a7aaaf;
     --input-bder:#5E5E5E;
     --input-color:rgba(255, 255, 255, 0.3);
     --input-label:rgba(255, 255, 255, 0.4);
+    --selected-step:#FFFFFF;
+    --unselected-step:rgba(255, 255, 255, 0.4);
     --logo-url: url("../../images/Logo@2xdarkmodelogo.png");
-    --darkmode-toggle-url: url("../../images/icon@darkmode.png");
+    --darkmode-toggle-url: url("../../images/icon@lightmode.png");
   }
 
   

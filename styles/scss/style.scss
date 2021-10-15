@@ -3,27 +3,22 @@
 @import './color';
 @import './mixin';
 
-body{
-  // border: 2px solid tomato;
-  width: 100vw;
-}
+
 .container{
   margin: 0 auto;
 }
 
+// nav
 nav{
   position: relative;
   height: 56px;
+  @extend %standard-boxshadow;
   .nav__toggle{
     display: none;
     &:checked{
       & ~ [class="navbar"]{
         transform: scale(1 , 1);
-        & > ul {
-          opacity: 1;
-          transition: opacity .1s ease-in .3s;
-        }
-        [class="nav__icons"]{
+        & > ul , [class="nav__icons"]{
           opacity: 1;
           transition: opacity .1s ease-in .3s;
         }
@@ -32,6 +27,7 @@ nav{
   }
   .navbar{
     position: absolute;
+    z-index: 999;
     top:100%;
     width: 100%;;
     display: grid;
@@ -41,6 +37,7 @@ nav{
     transform: scale(1 , 0);
     transform-origin: top;
     transition: transform .3s ease-in;
+    background-color: $white;
 
     .nav__links{
       grid-area: span 5 / 1 / 6 / 2;
@@ -78,18 +75,20 @@ nav{
       :nth-last-child(2){
         margin: 0 50px;
       }
+      :nth-child(4){
+        background: var(--darkmode-toggle-url);
+        background-size: cover;
+      }
     }
   }
   .nav__logo{
-    outline: 2px soild red;
     position: absolute;
     width: 135.85px;
     height: 24px;
     background: var(--logo-url);
     background-size: cover;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    @extend %position-center;
+    
   } 
   .nav__toggle__label{
     position: absolute;
@@ -116,6 +115,100 @@ nav{
       }
       &:after{
         bottom:-8px;
+      }
+    }
+  }
+}
+
+// main
+main{
+  .title{
+    margin: 1rem;
+  }
+  .stepper{
+    outline: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: 32px;
+    justify-content: center;
+    .step{
+      position: relative;
+      .label__container{
+        display: none;
+      }
+      .circle__container{
+        height: 2rem;
+        width: 2rem;
+        border: 1px solid var(--unselected-step);
+        color: var(--unselected-step);
+        border-radius: 50%;
+      }
+    }
+    :nth-child(1){
+      .circle__container{
+        position: absolute;
+        left: 1rem;
+        &:after{
+          content:'1';
+          position: absolute;
+          @extend %position-center;
+        }
+      }
+    }
+    :nth-child(2){
+      position: relative;
+      display: flex;
+      justify-content: center;
+      .circle__container{
+        &:after{
+          content:'2';
+          position: absolute;
+          @extend %position-center;
+        }
+      }
+      .connect__line{
+        position: absolute;
+        height: 1px;
+        top:50%;
+        left:calc(-100% + 80px);
+        right:calc(50% + 48px);
+        background-color: rgb(8, 8, 8);
+      }
+    }
+    :nth-child(3){
+      .circle__container{
+        position: absolute;
+        right: 1rem;
+        &:after{
+          content:'3';
+          position: absolute;
+          @extend %position-center;
+        }
+      }
+      .connect__line{
+        position: absolute;
+        height: 1px;
+        top:50%;
+        left:calc(-50% + 48px);
+        right:80px;
+        background-color: var(--unselected-step);
+      }
+    }
+    div.step{
+      &.active{
+        .circle__container, .connect__line{
+        border: 1px solid var(--selected-step);
+        color: var(--selected-step);
+        }
+      }
+      &.check{
+        .circle__container{
+          color: $white;
+          background-color: var(--selected-step);
+          &:after{
+            content:'\2714'
+          }
+        }
       }
     }
   }

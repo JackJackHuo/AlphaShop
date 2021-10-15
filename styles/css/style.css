@@ -12,8 +12,10 @@
   --input-bder:#4A4A4A;
   --input-color:#999999;
   --input-label:#808080;
+  --selected-step:#2A2A2A;
+  --unselected-step:#AFB1BD;
   --logo-url: url("../../images/Logo@2x.png");
-  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
 }
 
 [data-theme=dark] {
@@ -28,8 +30,10 @@
   --input-bder:#5E5E5E;
   --input-color:rgba(255, 255, 255, 0.3);
   --input-label:rgba(255, 255, 255, 0.4);
+  --selected-step:#FFFFFF;
+  --unselected-step:rgba(255, 255, 255, 0.4);
   --logo-url: url("../../images/Logo@2xdarkmodelogo.png");
-  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
+  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
 }
 
 /* reset css */
@@ -621,6 +625,7 @@ html {
 
 body {
   height: 100%;
+  width: 100vw;
   background: var(--body-bg);
   color: var(--body-color);
   font-family: "Noto Sans TC";
@@ -723,8 +728,10 @@ body {
   --input-bder:#4A4A4A;
   --input-color:#999999;
   --input-label:#808080;
+  --selected-step:#2A2A2A;
+  --unselected-step:#AFB1BD;
   --logo-url: url("../../images/Logo@2x.png");
-  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
 }
 
 [data-theme=dark] {
@@ -739,8 +746,20 @@ body {
   --input-bder:#5E5E5E;
   --input-color:rgba(255, 255, 255, 0.3);
   --input-label:rgba(255, 255, 255, 0.4);
+  --selected-step:#FFFFFF;
+  --unselected-step:rgba(255, 255, 255, 0.4);
   --logo-url: url("../../images/Logo@2xdarkmodelogo.png");
-  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
+  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+}
+
+nav {
+  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+}
+
+main .stepper :nth-child(3) .circle__container:after, main .stepper :nth-child(2) .circle__container:after, main .stepper :nth-child(1) .circle__container:after, nav .nav__logo {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 /* basic setting */
@@ -756,8 +775,10 @@ body {
   --input-bder:#4A4A4A;
   --input-color:#999999;
   --input-label:#808080;
+  --selected-step:#2A2A2A;
+  --unselected-step:#AFB1BD;
   --logo-url: url("../../images/Logo@2x.png");
-  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
 }
 
 [data-theme=dark] {
@@ -772,12 +793,10 @@ body {
   --input-bder:#5E5E5E;
   --input-color:rgba(255, 255, 255, 0.3);
   --input-label:rgba(255, 255, 255, 0.4);
+  --selected-step:#FFFFFF;
+  --unselected-step:rgba(255, 255, 255, 0.4);
   --logo-url: url("../../images/Logo@2xdarkmodelogo.png");
-  --darkmode-toggle-url: url("../../images/icon@darkmode.png");
-}
-
-body {
-  width: 100vw;
+  --darkmode-toggle-url: url("../../images/icon@lightmode.png");
 }
 
 .container {
@@ -794,16 +813,13 @@ nav .nav__toggle {
 nav .nav__toggle:checked ~ [class=navbar] {
   transform: scale(1, 1);
 }
-nav .nav__toggle:checked ~ [class=navbar] > ul {
-  opacity: 1;
-  transition: opacity 0.1s ease-in 0.3s;
-}
-nav .nav__toggle:checked ~ [class=navbar] [class=nav__icons] {
+nav .nav__toggle:checked ~ [class=navbar] > ul, nav .nav__toggle:checked ~ [class=navbar] [class=nav__icons] {
   opacity: 1;
   transition: opacity 0.1s ease-in 0.3s;
 }
 nav .navbar {
   position: absolute;
+  z-index: 999;
   top: 100%;
   width: 100%;
   display: grid;
@@ -813,6 +829,7 @@ nav .navbar {
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 0.3s ease-in;
+  background-color: #fff;
 }
 nav .navbar .nav__links {
   grid-area: span 5/1/6/2;
@@ -849,16 +866,16 @@ nav .navbar .nav__icons .nav__icon {
 nav .navbar .nav__icons :nth-last-child(2) {
   margin: 0 50px;
 }
+nav .navbar .nav__icons :nth-child(4) {
+  background: var(--darkmode-toggle-url);
+  background-size: cover;
+}
 nav .nav__logo {
-  outline: 2px soild red;
   position: absolute;
   width: 135.85px;
   height: 24px;
   background: var(--logo-url);
   background-size: cover;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
 }
 nav .nav__toggle__label {
   position: absolute;
@@ -886,6 +903,82 @@ nav .nav__toggle__label .hamburger:before {
 }
 nav .nav__toggle__label .hamburger:after {
   bottom: -8px;
+}
+
+main .title {
+  margin: 1rem;
+}
+main .stepper {
+  outline: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 32px;
+  justify-content: center;
+}
+main .stepper .step {
+  position: relative;
+}
+main .stepper .step .label__container {
+  display: none;
+}
+main .stepper .step .circle__container {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid var(--unselected-step);
+  color: var(--unselected-step);
+  border-radius: 50%;
+}
+main .stepper :nth-child(1) .circle__container {
+  position: absolute;
+  left: 1rem;
+}
+main .stepper :nth-child(1) .circle__container:after {
+  content: "1";
+  position: absolute;
+}
+main .stepper :nth-child(2) {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+main .stepper :nth-child(2) .circle__container:after {
+  content: "2";
+  position: absolute;
+}
+main .stepper :nth-child(2) .connect__line {
+  position: absolute;
+  height: 1px;
+  top: 50%;
+  left: calc(-100% + 80px);
+  right: calc(50% + 48px);
+  background-color: #080808;
+}
+main .stepper :nth-child(3) .circle__container {
+  position: absolute;
+  right: 1rem;
+}
+main .stepper :nth-child(3) .circle__container:after {
+  content: "3";
+  position: absolute;
+}
+main .stepper :nth-child(3) .connect__line {
+  position: absolute;
+  height: 1px;
+  top: 50%;
+  left: calc(-50% + 48px);
+  right: 80px;
+  background-color: var(--unselected-step);
+}
+main .stepper div.step.active .circle__container, main .stepper div.step.active .connect__line {
+  border: 1px solid var(--selected-step);
+  color: var(--selected-step);
+}
+main .stepper div.step.check .circle__container {
+  color: #fff;
+  background-color: var(--selected-step);
+}
+main .stepper div.step.check .circle__container:after {
+  content: "✔";
 }
 
 /*# sourceMappingURL=style.css.map */
