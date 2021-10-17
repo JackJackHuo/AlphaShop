@@ -10,12 +10,13 @@
 }
 
 %input-style{
+  height: 40px;
   border: 1px solid var(--input-bder);
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 4px;
+  font-size: 12px;
   padding: 0.5rem;
   &:hover , &:active{
-    border-color: $dark-gray;
+    border-color: var(--selected-step);
   }
 }
 

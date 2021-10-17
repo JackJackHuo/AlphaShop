@@ -756,6 +756,17 @@ nav {
   box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
 }
 
+main form .form__content :nth-child(3) .inputs__wrapper .form__group .form__control, main form .form__content :nth-child(1) .inputs__wrapper .form__group .form__control {
+  height: 40px;
+  border: 1px solid var(--input-bder);
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 0.5rem;
+}
+main form .form__content :nth-child(3) .inputs__wrapper .form__group .form__control:hover, main form .form__content :nth-child(1) .inputs__wrapper .form__group .form__control:hover, main form .form__content :nth-child(3) .inputs__wrapper .form__group .form__control:active, main form .form__content :nth-child(1) .inputs__wrapper .form__group .form__control:active {
+  border-color: var(--selected-step);
+}
+
 main .stepper :nth-child(3) .circle__container:after, main .stepper :nth-child(2) .circle__container:after, main .stepper :nth-child(1) .circle__container:after, nav .nav__logo {
   top: 50%;
   left: 50%;
@@ -909,7 +920,6 @@ main .title {
   margin: 1rem;
 }
 main .stepper {
-  outline: 2px solid red;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 32px;
@@ -973,12 +983,133 @@ main .stepper div.step.active .circle__container, main .stepper div.step.active 
   border: 1px solid var(--selected-step);
   color: var(--selected-step);
 }
-main .stepper div.step.check .circle__container {
+main .stepper div.step.checked .circle__container {
   color: #fff;
   background-color: var(--selected-step);
 }
-main .stepper div.step.check .circle__container:after {
+main .stepper div.step.checked .circle__container:after {
   content: "✔";
+}
+main form .form__content .form__title {
+  margin: 24px;
+}
+main form .form__content :nth-child(1) .inputs__wrapper {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0 1rem;
+}
+main form .form__content :nth-child(1) .inputs__wrapper .form__group {
+  display: flex;
+  flex-direction: column;
+}
+main form .form__content :nth-child(1) .inputs__wrapper .form__group label {
+  font-size: 12px;
+  color: var(--form-title);
+}
+main form .form__content :nth-child(1) .inputs__wrapper .form__group .form__control {
+  margin: 0.5rem 0 1rem;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(1) {
+  grid-area: 1/span 2/2/3;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(1) .form__control {
+  margin-right: 30px;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(2) {
+  grid-area: 1/span 3/2/6;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(3) {
+  grid-area: 2/1/3/6;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(4) {
+  grid-area: 3/1/4/6;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(5) {
+  grid-area: 4/1/5/6;
+}
+main form .form__content :nth-child(1) .inputs__wrapper :nth-child(6) {
+  grid-area: 5/1/6/6;
+}
+main form .form__content :nth-child(2) .inputs__wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 60px);
+  grid-gap: 1.5rem 0;
+  padding: 0 1rem;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group {
+  position: relative;
+  border: 1px solid var(--selected-step);
+  border-radius: 4px;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group .form__control {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-70%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group .form__control:checked {
+  box-shadow: inset 0 0 0 2px #3c88fd;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group label {
+  display: flex;
+  flex-direction: column;
+  margin: 11px 60px;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group label span:nth-of-type(1) {
+  font-size: 14px;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group label span:nth-of-type(2) {
+  font-size: 12px;
+}
+main form .form__content :nth-child(2) .inputs__wrapper .form__group .shipping__cost {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  font-size: 12px;
+}
+main form .form__content :nth-child(2) .inputs__wrapper :nth-child(3) {
+  grid-area: 1/1/2/2;
+}
+main form .form__content :nth-child(2) .inputs__wrapper :nth-child(4) {
+  grid-area: 2/1/3/2;
+}
+main form .form__content :nth-child(3) .inputs__wrapper {
+  display: grid;
+  grid-template-rows: repeat 3, 1fr;
+  grid-template-columns: repeat 2, 1fr;
+  padding: 0 1rem;
+}
+main form .form__content :nth-child(3) .inputs__wrapper .form__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main form .form__content :nth-child(3) .inputs__wrapper .form__group label {
+  font-size: 12px;
+  color: var(--form-title);
+}
+main form .form__content :nth-child(3) .inputs__wrapper .form__group .form__control {
+  margin: 8px 0 24px;
+}
+main form .form__content :nth-child(3) .inputs__wrapper :nth-child(1) {
+  grid-area: 1/1/2/3;
+}
+main form .form__content :nth-child(3) .inputs__wrapper :nth-child(2) {
+  grid-area: 2/1/3/3;
+}
+main form .form__content :nth-child(3) .inputs__wrapper :nth-child(3) {
+  grid-area: 3/1/4/2;
+  width: 90%;
+}
+main form .form__content :nth-child(3) .inputs__wrapper :nth-child(4) {
+  grid-area: 3/2/4/3;
+  width: 90%;
 }
 
 /*# sourceMappingURL=style.css.map */
