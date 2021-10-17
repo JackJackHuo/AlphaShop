@@ -8,6 +8,7 @@
    <title>Document</title>
  </head>
  <body>
+   <!-- nav -->
    <nav>
      <div class="container">
         <input type="checkbox" name="nav__toggle" id="nav__toggle" class="nav__toggle">
@@ -34,10 +35,12 @@
         <a href="#" class="nav__logo"></a>
      </div>
    </nav>
+   <!-- main -->
    <main>
      <div class="container">
        <div class="main__content content__left content__upper">
          <h1 class="title">結帳</h1>
+         <!-- stepper -->
          <div class="stepper">
            <div class="step checked">
              <div class="circle__container"></div>
@@ -54,6 +57,7 @@
              <div class="label__container">付款資訊</div>
            </div>
          </div>
+         <!-- form -->
         <form action="#">
           <div class="form__content">
             <div class="part">
@@ -112,7 +116,7 @@
                 </div>
               </div>
             </div>
-            <div class="part">
+            <div class="part d-none">
               <h2 class="form__title">運送方式</h2>
               <div class="inputs__wrapper">               
                 <div class="form__group"> 
@@ -133,7 +137,7 @@
                 </div>
               </div>
             </div>
-            <div class="part">
+            <div class="part d-none">
               <h2 class="form__title">付款資訊</h2>
               <div class="inputs__wrapper">
                 <div class="form__group">
@@ -153,12 +157,61 @@
                   <input type="text" name="card__code" id="input__card--code" class="form__control" placeholder="123">
                 </div>
               </div>
-            </div>
-             
+            </div>             
           </div>
-        </form>
+          <div class="form__btn--control">
+            <div class="btn__container">
+              <button type="submit" class="form__btn--previous">&longleftarrow; 上一步</button>
+              <button type="submit" class="form__btn--next form__btn--confirm">上一步 &longrightarrow;</button>
+            </div>
+          </div>
+        </form>        
        </div>
-      <div class="main__content content__right content__lower"></div>
+      <div class="main__content content__right content__lower">
+         <div class="cart">
+           <h3 class="cart__title d-none">購物籃</h3>
+           <div class="cart__items">
+             <div class="cart__item">
+               <img src="./images/Block@jean_1.png" alt="" class="cart__item--img">
+               <div class="cart__item--content">
+                 <div class="cart__item--info">
+                   <span class="item__name">破壞補釘修身牛仔褲</span>
+                   <div class="item__quantity">
+                     <div class="item__quantity--btn item__quantity--minus"></div>
+                     <span class="item__quantity--number">1</span>
+                     <div class="item__quantity--btn item__quantity--plus"></div>
+                   </div>
+                  </div>
+                  <span class="item__price">$3,999</span>
+               </div>
+             </div>
+             <div class="cart__item">
+               <img src="./images/Block@jean_2.png" alt="" class="cart__item--img">
+               <div class="cart__item--content">
+                 <div class="cart__item--info">
+                   <span class="item__name">刷色直筒牛仔褲</span>
+                   <div class="item__quantity">
+                     <div class="item__quantity--btn item__quantity--minus"></div>
+                     <span class="item__quantity--number">1</span>
+                     <div class="item__quantity--btn item__quantity--plus"></div>
+                   </div>
+                 </div>
+                 <span class="item__price">$1,299</span>
+               </div>
+             </div>
+            </div>
+            <div class="cart__charge">
+              <div class="cart__shipping">
+                <div class="cart__charge--title">運費</div>
+                <div class="cart__charge--content">免費</div>
+              </div>
+              <div class="cart__total">
+               <div class="cart__charge--title">小計</div>
+               <div class="cart__charge--content">$5,298</div>
+              </div>
+            </div>
+         </div>
+      </div>
      </div>
    </main>
    <script src="./scripts/main.js"></script>
