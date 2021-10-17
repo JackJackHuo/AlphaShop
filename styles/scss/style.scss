@@ -7,17 +7,14 @@
 .container{
   margin: 0 auto;
 }
-
-// nav
-nav{
-  position: relative;
-  height: 56px;
-  @extend %standard-boxshadow;
-  .nav__toggle{
+#nav__toggle{
     display: none;
     &:checked{
-      & ~ [class="navbar"]{
-        transform: scale(1 , 1);
+      & ~ main{
+        display: none;
+      }
+      & ~ nav .navbar{
+        transform: scale(1 , 1); 
         & > ul , [class="nav__icons"]{
           opacity: 1;
           transition: opacity .1s ease-in .3s;
@@ -25,6 +22,40 @@ nav{
       }
     }
   }
+  .nav__toggle__label{
+    position: absolute;
+    z-index: 1000;
+    left: 17px;
+    top: 26px;
+    display: flex;
+    height: 100%;
+
+    .hamburger{
+      position: relative;
+      width: 30px;
+      height: 3px;
+      background-color: var(--body-color);
+      &:before , &:after{
+        content:'';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: var(--body-color);
+      }
+      &:before{
+        top:-8px;
+      }
+      &:after{
+        bottom:-8px;
+      }
+    }
+  }
+// nav
+nav{
+  position: relative;
+  height: 56px;
+  @extend %standard-boxshadow;
+  
   .navbar{
     position: absolute;
     z-index: 999;
@@ -90,34 +121,6 @@ nav{
     @extend %position-center;
     
   } 
-  .nav__toggle__label{
-    position: absolute;
-    left: 17px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-
-    .hamburger{
-      position: relative;
-      width: 30px;
-      height: 3px;
-      background-color: var(--body-color);
-      &:before , &:after{
-        content:'';
-        position: absolute;
-        width: 30px;
-        height: 3px;
-        background-color: var(--body-color);
-      }
-      &:before{
-        top:-8px;
-      }
-      &:after{
-        bottom:-8px;
-      }
-    }
-  }
 }
 
 // main

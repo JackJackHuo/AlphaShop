@@ -624,6 +624,7 @@ html {
 }
 
 body {
+  position: relative;
   height: 100%;
   width: 100vw;
   background: var(--body-bg);
@@ -814,19 +815,51 @@ main .content__lower .cart .cart__items .cart__item .cart__item--content .cart__
   margin: 0 auto;
 }
 
+#nav__toggle {
+  display: none;
+}
+#nav__toggle:checked ~ main {
+  display: none;
+}
+#nav__toggle:checked ~ nav .navbar {
+  transform: scale(1, 1);
+}
+#nav__toggle:checked ~ nav .navbar > ul, #nav__toggle:checked ~ nav .navbar [class=nav__icons] {
+  opacity: 1;
+  transition: opacity 0.1s ease-in 0.3s;
+}
+
+.nav__toggle__label {
+  position: absolute;
+  z-index: 1000;
+  left: 17px;
+  top: 26px;
+  display: flex;
+  height: 100%;
+}
+.nav__toggle__label .hamburger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: var(--body-color);
+}
+.nav__toggle__label .hamburger:before, .nav__toggle__label .hamburger:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: var(--body-color);
+}
+.nav__toggle__label .hamburger:before {
+  top: -8px;
+}
+.nav__toggle__label .hamburger:after {
+  bottom: -8px;
+}
+
 nav {
   position: relative;
   height: 56px;
-}
-nav .nav__toggle {
-  display: none;
-}
-nav .nav__toggle:checked ~ [class=navbar] {
-  transform: scale(1, 1);
-}
-nav .nav__toggle:checked ~ [class=navbar] > ul, nav .nav__toggle:checked ~ [class=navbar] [class=nav__icons] {
-  opacity: 1;
-  transition: opacity 0.1s ease-in 0.3s;
 }
 nav .navbar {
   position: absolute;
@@ -887,33 +920,6 @@ nav .nav__logo {
   height: 24px;
   background: var(--logo-url);
   background-size: cover;
-}
-nav .nav__toggle__label {
-  position: absolute;
-  left: 17px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-nav .nav__toggle__label .hamburger {
-  position: relative;
-  width: 30px;
-  height: 3px;
-  background-color: var(--body-color);
-}
-nav .nav__toggle__label .hamburger:before, nav .nav__toggle__label .hamburger:after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 3px;
-  background-color: var(--body-color);
-}
-nav .nav__toggle__label .hamburger:before {
-  top: -8px;
-}
-nav .nav__toggle__label .hamburger:after {
-  bottom: -8px;
 }
 
 main {
