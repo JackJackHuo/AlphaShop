@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-%input-style{
+@mixin input{
   height: 40px;
   border: 1px solid var(--input-bder);
   border-radius: 4px;
@@ -19,9 +19,20 @@
     border-color: var(--selected-step);
   }
 }
+%input-style{
+  @include input;
+}
+
 
 %position-center{
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+%grid-layout{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat ( 12 , 1fr );
+}
+

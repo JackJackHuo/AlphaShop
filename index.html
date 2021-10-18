@@ -22,25 +22,28 @@
             <li class="nav__link link__customized">客製商品</li>
             <li class="nav__link link__contact">聯絡我們</li>
           </ul>
-           <div class="nav__icons">
-             <input type="text" name="" id="" class="d-none">
-             <div class="nav__icon icon__search">
-               <img src="./images/icon@search.png" alt="">
-             </div>
-             <div class="nav__icon icon__cart">
-              <img src="./images/icom@cart.png" alt="">
-             </div>
-             <div class="nav__icon icon__darkMode--toggle"></div>
-           </div>
+          <a href="#" class="nav__logo d-none"></a>
+
+          <div class="nav__icons">
+            <input type="text" name="" id="" class="d-none">
+            <div class="nav__icon icon__search">
+              <img src="./images/icon@search.png" alt="">
+            </div>
+            <div class="nav__icon icon__cart">
+            <img src="./images/icom@cart.png" alt="">
+            </div>
+            <div class="nav__icon icon__darkMode--toggle"></div>
+          </div>
         </div>
         <a href="#" class="nav__logo"></a>
      </div>
    </nav>
    <!-- main -->
    <main>
+     <h1 class="title">結帳</h1>
      <div class="container">
+      <!-- content left -->
        <div class="main__content content__left content__upper">
-         <h1 class="title">結帳</h1>
          <!-- stepper -->
          <div class="stepper">
            <div class="step checked">
@@ -61,7 +64,7 @@
          <!-- form -->
          <form action="#">
           <div class="form__content">
-            <div class="part">
+            <div class="part d-none">
               <h2 class="form__title">寄送地址</h2>
               <div class="inputs__wrapper">
                 <div class="form__group">
@@ -138,7 +141,7 @@
                 </div>
               </div>
             </div>
-            <div class="part d-none">
+            <div class="part ">
               <h2 class="form__title">付款資訊</h2>
               <div class="inputs__wrapper">
                 <div class="form__group">
@@ -168,6 +171,7 @@
           </div>
          </form>        
        </div>
+       <!-- content right -->
        <div class="main__content content__right content__lower">
         <div class="cart">
           <h3 class="cart__title d-none">購物籃</h3>
