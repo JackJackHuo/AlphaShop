@@ -9,6 +9,7 @@ $light-gray: #a7aaaf;
 :root {
   --body-bg: #FFFFFF;
   --footer-bg: #F6F7F8;
+  --footer-color:#7D7E86;
   --next-btn: #F67599;
   --body-color: #2A2A2A;
   --divider: #E6E6EB;
@@ -27,6 +28,7 @@ $light-gray: #a7aaaf;
   [data-theme="dark"]{
     --body-bg: #121212;
     --footer-bg: #333333;
+    --footer-color:#ADADAD;
     --next-btn: #F67599;
     --body-color: #FFFFFF;
     --divider: rgba(255, 255, 255, 0.2);

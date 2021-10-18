@@ -3,6 +3,7 @@
 :root {
   --body-bg: #FFFFFF;
   --footer-bg: #F6F7F8;
+  --footer-color:#7D7E86;
   --next-btn: #F67599;
   --body-color: #2A2A2A;
   --divider: #E6E6EB;
@@ -21,6 +22,7 @@
 [data-theme=dark] {
   --body-bg: #121212;
   --footer-bg: #333333;
+  --footer-color:#ADADAD;
   --next-btn: #F67599;
   --body-color: #FFFFFF;
   --divider: rgba(255, 255, 255, 0.2);
@@ -620,7 +622,7 @@ input:invalid {
 
 html {
   font-size: 16px;
-  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -720,6 +722,7 @@ body {
 :root {
   --body-bg: #FFFFFF;
   --footer-bg: #F6F7F8;
+  --footer-color:#7D7E86;
   --next-btn: #F67599;
   --body-color: #2A2A2A;
   --divider: #E6E6EB;
@@ -738,6 +741,7 @@ body {
 [data-theme=dark] {
   --body-bg: #121212;
   --footer-bg: #333333;
+  --footer-color:#ADADAD;
   --next-btn: #F67599;
   --body-color: #FFFFFF;
   --divider: rgba(255, 255, 255, 0.2);
@@ -778,6 +782,7 @@ main .content__lower .cart .cart__items .cart__item .cart__item--content .cart__
 :root {
   --body-bg: #FFFFFF;
   --footer-bg: #F6F7F8;
+  --footer-color:#7D7E86;
   --next-btn: #F67599;
   --body-color: #2A2A2A;
   --divider: #E6E6EB;
@@ -796,6 +801,7 @@ main .content__lower .cart .cart__items .cart__item .cart__item--content .cart__
 [data-theme=dark] {
   --body-bg: #121212;
   --footer-bg: #333333;
+  --footer-color:#ADADAD;
   --next-btn: #F67599;
   --body-color: #FFFFFF;
   --divider: rgba(255, 255, 255, 0.2);
@@ -811,10 +817,10 @@ main .content__lower .cart .cart__items .cart__item .cart__item--content .cart__
   --darkmode-toggle-url: url("../../images/icon@lightmode.png");
 }
 
-.container {
+body .container:not(nav .container) {
   margin: 0 auto;
+  width: 90%;
 }
-
 body #nav__toggle {
   display: none;
 }
@@ -929,10 +935,10 @@ nav .nav__logo {
 
 main {
   position: relative;
-  top: 56px;
+  padding-top: 56px;
 }
 main .title {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 main .stepper {
   display: grid;
@@ -955,7 +961,7 @@ main .stepper .step .circle__container {
 }
 main .stepper :nth-child(1) .circle__container {
   position: absolute;
-  left: 1rem;
+  left: 0;
 }
 main .stepper :nth-child(1) .circle__container:after {
   content: "1";
@@ -974,13 +980,13 @@ main .stepper :nth-child(2) .connect__line {
   position: absolute;
   height: 1px;
   top: 50%;
-  left: calc(-100% + 80px);
-  right: calc(50% + 48px);
+  left: calc(-100% + 50px);
+  right: calc(50% + 38px);
   background-color: #080808;
 }
 main .stepper :nth-child(3) .circle__container {
   position: absolute;
-  right: 1rem;
+  right: 0;
 }
 main .stepper :nth-child(3) .circle__container:after {
   content: "3";
@@ -990,8 +996,8 @@ main .stepper :nth-child(3) .connect__line {
   position: absolute;
   height: 1px;
   top: 50%;
-  left: calc(-50% + 48px);
-  right: 80px;
+  left: calc(-50% + 38px);
+  right: 50px;
   background-color: var(--unselected-step);
 }
 main .stepper div.step.active .circle__container, main .stepper div.step.active .connect__line {
@@ -1006,13 +1012,12 @@ main .stepper div.step.checked .circle__container:after {
   content: "✔";
 }
 main form .form__content .form__title {
-  margin: 24px;
+  margin: 24px 0;
 }
 main form .form__content :nth-child(1) .inputs__wrapper {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  padding: 0 1rem;
 }
 main form .form__content :nth-child(1) .inputs__wrapper .form__group {
   display: flex;
@@ -1052,7 +1057,6 @@ main form .form__content :nth-child(2) .inputs__wrapper {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 60px);
   grid-gap: 1.5rem 0;
-  padding: 0 1rem;
 }
 main form .form__content :nth-child(2) .inputs__wrapper .form__group {
   position: relative;
@@ -1098,7 +1102,6 @@ main form .form__content :nth-child(3) .inputs__wrapper {
   display: grid;
   grid-template-rows: repeat 3, 1fr;
   grid-template-columns: repeat 2, 1fr;
-  padding: 0 1rem;
 }
 main form .form__content :nth-child(3) .inputs__wrapper .form__group {
   display: flex;
@@ -1128,16 +1131,15 @@ main form .form__content :nth-child(3) .inputs__wrapper :nth-child(4) {
 }
 main form .form__btn--control {
   position: absolute;
-  width: 100%;
-  bottom: -150px;
+  width: 90%;
+  bottom: -140px;
 }
 main form .form__btn--control .btn__container {
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
   border-top: 1px solid var(--divider);
-  margin: 3rem 1rem;
-  padding-top: 24px;
+  padding: 24px 0 40px;
 }
 main form .form__btn--control .btn__container button {
   height: 46px;
@@ -1156,7 +1158,6 @@ main form .form__btn--control .btn__container button:nth-of-type(2) {
 }
 main .content__lower .cart {
   border: 1px solid var(--cart-btn);
-  margin: 0 1rem;
 }
 main .content__lower .cart .cart__items {
   padding: 1rem;
@@ -1219,7 +1220,52 @@ main .content__lower .cart__charge > div {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  margin: 0 1rem;
   border-top: 1px solid var(--divider);
+}
+
+footer {
+  margin-top: 15rem;
+  background-color: var(--footer-bg);
+}
+footer .container {
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: repeat 12, 1fr;
+  align-items: center;
+}
+footer .container .footer__logo {
+  grid-row: 1/2;
+  grid-column: 1/span 3;
+  width: 135.85px;
+  height: 24px;
+  background: var(--logo-url);
+  background-size: cover;
+}
+footer .container .footer__items {
+  grid-column: 4/13;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .container .footer__items .footer__item .footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  color: var(--footer-color);
+}
+footer .container .footer__items .footer__item .footer__links span {
+  margin-top: 5px;
+}
+footer .container .footer__items .footer__item .footer__links .footer__link {
+  color: var(--footer-color);
+  margin-top: 5px;
+}
+footer .container .footer__items .footer__item .footer__links .social__media {
+  display: flex;
+  margin-top: 10px;
+}
+footer .container .footer__items .footer__item .footer__links .social__media .footer__link:not(:last-of-type) {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
