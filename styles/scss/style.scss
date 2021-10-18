@@ -7,58 +7,66 @@
 .container{
   margin: 0 auto;
 }
-#nav__toggle{
-    display: none;
-    &:checked{
-      & ~ main{
-        display: none;
-      }
-      & ~ nav .navbar{
-        transform: scale(1 , 1); 
-        & > ul , [class="nav__icons"]{
-          opacity: 1;
-          transition: opacity .1s ease-in .3s;
+// nav toggle
+body{
+  #nav__toggle{
+      display: none;
+      &:checked{
+        & ~ main{
+          display: none;
+        }
+        & ~ nav .navbar{
+          transform: scale(1 , 1); 
+          & > ul , [class="nav__icons"]{
+            opacity: 1;
+            transition: opacity .1s ease-in .3s;
+          }
         }
       }
     }
-  }
-  .nav__toggle__label{
-    position: absolute;
-    z-index: 1000;
-    left: 17px;
-    top: 26px;
-    display: flex;
-    height: 100%;
-
-    .hamburger{
-      position: relative;
-      width: 30px;
-      height: 3px;
-      background-color: var(--body-color);
-      &:before , &:after{
-        content:'';
-        position: absolute;
+    .nav__toggle__label{
+      position: fixed;
+      z-index: 1000;
+      left: 17px;
+      top: 26px;
+      display: flex;
+      height: 100%;
+  
+      .hamburger{
+        position: relative;
         width: 30px;
         height: 3px;
         background-color: var(--body-color);
-      }
-      &:before{
-        top:-8px;
-      }
-      &:after{
-        bottom:-8px;
+        &:before , &:after{
+          content:'';
+          position: absolute;
+          width: 30px;
+          height: 3px;
+          background-color: var(--body-color);
+        }
+        &:before{
+          top:-8px;
+        }
+        &:after{
+          bottom:-8px;
+        }
       }
     }
-  }
+}
 // nav
 nav{
-  position: relative;
+  position: fixed;
+  z-index: 999;
+  top:0;
   height: 56px;
+  width: 100%;
   @extend %standard-boxshadow;
-  
+  .container{
+    height: 100%;
+    background-color: var(--body-bg);
+  }
   .navbar{
     position: absolute;
-    z-index: 999;
     top:100%;
     width: 100%;;
     display: grid;
@@ -126,8 +134,9 @@ nav{
 // main
 main{
   position: relative;
+  top:56px;
   .title{
-    margin: 1rem;
+    padding: 1rem;
   }
   .stepper{
     display: grid;

@@ -815,55 +815,60 @@ main .content__lower .cart .cart__items .cart__item .cart__item--content .cart__
   margin: 0 auto;
 }
 
-#nav__toggle {
+body #nav__toggle {
   display: none;
 }
-#nav__toggle:checked ~ main {
+body #nav__toggle:checked ~ main {
   display: none;
 }
-#nav__toggle:checked ~ nav .navbar {
+body #nav__toggle:checked ~ nav .navbar {
   transform: scale(1, 1);
 }
-#nav__toggle:checked ~ nav .navbar > ul, #nav__toggle:checked ~ nav .navbar [class=nav__icons] {
+body #nav__toggle:checked ~ nav .navbar > ul, body #nav__toggle:checked ~ nav .navbar [class=nav__icons] {
   opacity: 1;
   transition: opacity 0.1s ease-in 0.3s;
 }
-
-.nav__toggle__label {
-  position: absolute;
+body .nav__toggle__label {
+  position: fixed;
   z-index: 1000;
   left: 17px;
   top: 26px;
   display: flex;
   height: 100%;
 }
-.nav__toggle__label .hamburger {
+body .nav__toggle__label .hamburger {
   position: relative;
   width: 30px;
   height: 3px;
   background-color: var(--body-color);
 }
-.nav__toggle__label .hamburger:before, .nav__toggle__label .hamburger:after {
+body .nav__toggle__label .hamburger:before, body .nav__toggle__label .hamburger:after {
   content: "";
   position: absolute;
   width: 30px;
   height: 3px;
   background-color: var(--body-color);
 }
-.nav__toggle__label .hamburger:before {
+body .nav__toggle__label .hamburger:before {
   top: -8px;
 }
-.nav__toggle__label .hamburger:after {
+body .nav__toggle__label .hamburger:after {
   bottom: -8px;
 }
 
 nav {
-  position: relative;
+  position: fixed;
+  z-index: 999;
+  top: 0;
   height: 56px;
+  width: 100%;
+}
+nav .container {
+  height: 100%;
+  background-color: var(--body-bg);
 }
 nav .navbar {
   position: absolute;
-  z-index: 999;
   top: 100%;
   width: 100%;
   display: grid;
@@ -924,9 +929,10 @@ nav .nav__logo {
 
 main {
   position: relative;
+  top: 56px;
 }
 main .title {
-  margin: 1rem;
+  padding: 1rem;
 }
 main .stepper {
   display: grid;
