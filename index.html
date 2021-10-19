@@ -46,11 +46,11 @@
        <div class="main__content content__left content__upper">
          <!-- stepper -->
          <div class="stepper">
-           <div class="step checked">
+           <div class="step active">
              <div class="circle__container"></div>
              <div class="label__container">寄送地址</div>
            </div>
-           <div class="step active">
+           <div class="step">
              <div class="circle__container"></div>
              <span class="connect__line"></span>
              <div class="label__container">運送方式</div>
@@ -64,7 +64,7 @@
          <!-- form -->
          <form action="#">
           <div class="form__content">
-            <div class="part d-none">
+            <div class="part">
               <h2 class="form__title">寄送地址</h2>
               <div class="inputs__wrapper">
                 <div class="form__group">
@@ -141,7 +141,7 @@
                 </div>
               </div>
             </div>
-            <div class="part ">
+            <div class="part d-none">
               <h2 class="form__title">付款資訊</h2>
               <div class="inputs__wrapper">
                 <div class="form__group">
@@ -166,7 +166,7 @@
           <div class="form__btn--control">
             <div class="btn__container">
               <button type="submit" class="form__btn--previous">&longleftarrow; 上一步</button>
-              <button type="submit" class="form__btn--next form__btn--confirm">上一步 &longrightarrow;</button>
+              <button type="submit" class="form__btn--next form__btn--confirm">下一步 &longrightarrow;</button>
             </div>
           </div>
          </form>        
@@ -182,23 +182,23 @@
                 <div class="cart__item--info">
                   <span class="item__name">破壞補釘修身牛仔褲</span>
                   <div class="item__quantity">
-                    <div class="item__quantity--btn item__quantity--minus"></div>
+                    <div class="item__quantity--btn item__quantity--minus" data-id="1"></div>
                     <span class="item__quantity--number">1</span>
-                    <div class="item__quantity--btn item__quantity--plus"></div>
+                    <div class="item__quantity--btn item__quantity--plus" data-id="1"></div>
                   </div>
                   </div>
                   <span class="item__price">$3,999</span>
               </div>
             </div>
-            <div class="cart__item">
+            <div class="cart__item" >
               <img src="./images/Block@jean_2.png" alt="" class="cart__item--img">
               <div class="cart__item--content">
                 <div class="cart__item--info">
                   <span class="item__name">刷色直筒牛仔褲</span>
                   <div class="item__quantity">
-                    <div class="item__quantity--btn item__quantity--minus"></div>
+                    <div class="item__quantity--btn item__quantity--minus" data-id="2"></div>
                     <span class="item__quantity--number">1</span>
-                    <div class="item__quantity--btn item__quantity--plus"></div>
+                    <div class="item__quantity--btn item__quantity--plus" data-id="2"></div>
                   </div>
                 </div>
                 <span class="item__price">$1,299</span>
