@@ -77,7 +77,8 @@ nav{
     transform: scale(1 , 0);
     transform-origin: top;
     transition: transform .3s ease-in;
-    background-color: $white;
+    color: var(--body-color);
+    background-color: var(--body-bg);
 
     .nav__links{
       grid-area: span 5 / 1 / 6 / 2;
