@@ -30,7 +30,6 @@ body{
       left: 17px;
       top: 26px;
       display: flex;
-      height: 100%;
   
       .hamburger{
         position: relative;
@@ -292,7 +291,7 @@ main{
           grid-gap: 1.5rem 0;  
           [type="radio"]{
             position: absolute;
-            z-index: 999;
+            z-index: 998;
             left: 5%;
             height: 20px;
             width: 20px;

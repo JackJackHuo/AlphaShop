@@ -857,7 +857,6 @@ body .nav__toggle__label {
   left: 17px;
   top: 26px;
   display: flex;
-  height: 100%;
 }
 body .nav__toggle__label .hamburger {
   position: relative;
@@ -1085,7 +1084,7 @@ main form .form__content :nth-child(2) .inputs__wrapper {
 }
 main form .form__content :nth-child(2) .inputs__wrapper [type=radio] {
   position: absolute;
-  z-index: 999;
+  z-index: 998;
   left: 5%;
   height: 20px;
   width: 20px;
