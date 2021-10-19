@@ -13,7 +13,9 @@ const darkModeBtn = document.querySelector('.icon__darkMode--toggle')
 let currentStep = 0
 
 
-function handleClickedBtn({target}){
+function handleClickedBtn(e){
+  e.preventDefault()
+  const target = e.target
   const thisStep = steps[currentStep]
   const nextStep = steps[currentStep + 1]
   const prevStep = steps[currentStep - 1]
@@ -64,6 +66,14 @@ function handleClickedQuantity({target}){
   }
 }
 
+function handleClickeddarkMode({target}){
+  if(!target.classList.contains('clicked')){
+    document.documentElement.setAttribute('data-theme', 'dark')
+  }else{
+    document.documentElement.setAttribute('data-theme', 'light')
+  }
+  target.classList.toggle('clicked')
+}
 btnControl.addEventListener('click' , handleClickedBtn)
 cart.addEventListener('click' , handleClickedQuantity)
 darkModeBtn.addEventListener('click' , handleClickeddarkMode)

@@ -23,6 +23,8 @@ $light-gray: #a7aaaf;
   --unselected-step:#AFB1BD;
   --logo-url: url("../../images/Logo@2x.png");
   --darkmode-toggle-url: url("../../images/icon@darkmode.png");
+  --search-url: url("../../images/icon@search.png");
+  --cart-url: url("../../images/icon@cart.png");
   }
 
   [data-theme="dark"]{
@@ -42,6 +44,9 @@ $light-gray: #a7aaaf;
     --unselected-step:rgba(255, 255, 255, 0.4);
     --logo-url: url("../../images/Logo@2xdarkmodelogo.png");
     --darkmode-toggle-url: url("../../images/icon@lightmode.png");
+    --search-url: url("../../images/icon@darkmode__search.png");
+    --cart-url: url("../../images/icom@darkmode__cart.png");
+
   }
 
   

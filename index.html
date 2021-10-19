@@ -26,12 +26,8 @@
 
           <div class="nav__icons">
             <input type="text" name="" id="" class="d-none">
-            <div class="nav__icon icon__search">
-              <img src="./images/icon@search.png" alt="">
-            </div>
-            <div class="nav__icon icon__cart">
-            <img src="./images/icom@cart.png" alt="">
-            </div>
+            <div class="nav__icon icon__search"></div>
+            <div class="nav__icon icon__cart"></div>
             <div class="nav__icon icon__darkMode--toggle"></div>
           </div>
         </div>
@@ -123,16 +119,16 @@
             <div class="part d-none">
               <h2 class="form__title">運送方式</h2>
               <div class="inputs__wrapper">               
+                <input type="radio" name="shipping-type" id="input__shipping--standard" class="form__control">
                 <div class="form__group"> 
-                  <input type="radio" name="shipping-type" id="input__shipping--standard" class="form__control">
                   <label for="input__shipping--standard">
                     <span class="shipping__type">標準運送</span>
                     <span class="shipping__time">約3~7個工作天</span>
                   </label>
                   <span class="shipping__cost">免費</span>
                 </div>
+                <input type="radio" name="shipping-type" id="input__shipping--express" class="form__control">
                 <div class="form__group">
-                  <input type="radio" name="shipping-type" id="input__shipping--express" class="form__control">
                   <label for="input__shipping--express">
                     <span class="shipping__type">DHL 貨運</span>
                     <span class="shipping__time">48小時內送達</span>

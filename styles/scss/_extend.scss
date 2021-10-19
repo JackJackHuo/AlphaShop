@@ -15,6 +15,8 @@
   border-radius: 4px;
   font-size: 12px;
   padding: 0.5rem;
+  background-color: var(--body-bg);
+  color: var(--body-color);
   &:hover , &:active{
     border-color: var(--selected-step);
   }
