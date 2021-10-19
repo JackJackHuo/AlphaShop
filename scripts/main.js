@@ -12,7 +12,6 @@ const darkModeBtn = document.querySelector('.icon__darkMode--toggle')
 
 let currentStep = 0
 
-
 function handleClickedBtn(e){
   e.preventDefault()
   const target = e.target
@@ -59,11 +58,24 @@ function resetBtn(){
 function handleClickedQuantity({target}){
   const cartItem = cartItems[+target.dataset.id - 1]
   let quantity = cartItem.querySelector('.item__quantity--number')
+  
   if (target.classList.contains('item__quantity--minus') && +quantity.innerHTML > 0){
     quantity.innerHTML = Number(quantity.innerHTML) - 1
   } else if(target.classList.contains('item__quantity--plus')) {
     quantity.innerHTML = Number(quantity.innerHTML) + 1
   }
+  calcTotal()
+}
+
+function calcTotal(){
+  let totalPrice = cart.querySelector('.cart__charge--total')
+  let total = 0
+  cartItems.forEach( item => {
+    const quantity = item.querySelector('.item__quantity--number')
+    const price = item.querySelector('.item__price')
+    total +=  +quantity.innerHTML * +price.innerHTML.split('$')[1].split(',').join('')
+  })
+  totalPrice.innerHTML = total
 }
 
 function handleClickeddarkMode({target}){
