@@ -893,11 +893,12 @@ nav .container {
 nav .navbar {
   position: absolute;
   top: 100%;
-  width: 100%;
+  width: 90%;
+  height: 394px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
-  height: 394px;
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 0.3s ease-in;
@@ -922,8 +923,8 @@ nav .navbar .nav__links .nav__link:after {
   content: "";
   position: absolute;
   top: calc(100% + 24px);
-  left: 14px;
-  right: 14px;
+  left: 0.5rem;
+  right: 0.5rem;
   border-bottom: 1px solid rgba(42, 42, 42, 0.1);
 }
 nav .navbar .nav__icons {
