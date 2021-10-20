@@ -1009,7 +1009,7 @@ main .stepper :nth-child(2) .connect__line {
   top: 50%;
   left: calc(-100% + 50px);
   right: calc(50% + 38px);
-  background-color: #080808;
+  background-color: var(--selected-step);
 }
 main .stepper :nth-child(3) .circle__container {
   position: absolute;
@@ -1025,7 +1025,7 @@ main .stepper :nth-child(3) .connect__line {
   top: 50%;
   left: calc(-50% + 38px);
   right: 50px;
-  background-color: var(--unselected-step);
+  background-color: var(--selected-step);
 }
 main .stepper div.step.active .circle__container, main .stepper div.step.active .connect__line {
   border: 1px solid var(--selected-step);
