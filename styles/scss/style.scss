@@ -12,44 +12,45 @@ body{
   #nav__toggle{
       display: none;
       &:checked{
-        & ~ main{
+         ~ main{
           display: none;
         }
-        & ~ nav .navbar{
+         ~ nav .navbar{
           transform: scale(1 , 1); 
-          & > ul , [class="nav__icons"]{
+           > ul , [class="nav__icons"]{
             opacity: 1;
+            // transition放在偽類的選擇器內，轉場效果只套用在in
             transition: opacity .1s ease-in .3s;
           }
         }
       }
   }
-    .nav__toggle__label{
-      position: fixed;
-      z-index: 1000;
-      left: 17px;
-      top: 26px;
-      display: flex;
-  
-      .hamburger{
-        position: relative;
+  .nav__toggle__label{
+    position: fixed;
+    z-index: 1000;
+    left: 17px;
+    top: 26px;
+    display: flex;
+
+    .hamburger{
+      position: relative;
+      width: 30px;
+      height: 3px;
+      background-color: var(--body-color);
+      &:before , &:after{
+        content:'';
+        position: absolute;
         width: 30px;
         height: 3px;
         background-color: var(--body-color);
-        &:before , &:after{
-          content:'';
-          position: absolute;
-          width: 30px;
-          height: 3px;
-          background-color: var(--body-color);
-        }
-        &:before{
-          top:-8px;
-        }
-        &:after{
-          bottom:-8px;
-        }
       }
+      &:before{
+        top:-8px;
+      }
+      &:after{
+        bottom:-8px;
+      }
+    }
   }
 }
 // nav
@@ -76,6 +77,7 @@ nav{
     grid-template-rows: repeat(6 , 1fr);
     transform: scale(1 , 0);
     transform-origin: top;
+    // transition放在目標選擇器本身內，轉場效果in & out 都套用
     transition: transform .3s ease-in;
     color: var(--body-color);
     background-color: var(--body-bg);
@@ -165,9 +167,6 @@ main{
         border: 1px solid var(--unselected-step);
         color: var(--unselected-step);
         border-radius: 50%;
-      }
-      .connect__line{
-        
       }
     }
     :nth-child(1){
